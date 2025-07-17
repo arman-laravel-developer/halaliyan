@@ -47,6 +47,17 @@ class GeneralDataController extends Controller
         }
     }
 
+    public function gtm()
+    {
+        $code = GoogleFacebookCode::first();
+
+        return response()->json([
+            'gtm' => [
+                'gtm_id' => $code->gtm_id ?? null,
+            ]
+        ]);
+    }
+
     public function getCategories ()
     {
         try {
